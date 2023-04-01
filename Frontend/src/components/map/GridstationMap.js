@@ -18,6 +18,9 @@ import "./GridstationMap.css";
 
 const GridstationMap = () => {
   const gridstations = useSelector(state => state.gridstation.gridstations);
+  const selectedGridstation = useSelector(
+    state => state.gridstation.gridstation
+  );
 
   const currentCoordinate = useSelector(
     state => state.gridstation.currentCoordinate
@@ -38,14 +41,15 @@ const GridstationMap = () => {
       source: vectorSource,
       style: feature => {
         const color = feature.get("color");
+        const strokeColor = feature.get("strokeColor");
         return new Style({
           image: new CircleStyle({
             fill: new Fill({
               color: color
             }),
             stroke: new Stroke({
-              color: color,
-              width: 1
+              color: strokeColor,
+              width: 3
             }),
             radius: 7
           })
@@ -87,6 +91,8 @@ const GridstationMap = () => {
 
     gridstations.forEach(gridstation => {
       const color = gridstation.status ? "green" : "red";
+      const strokeColor =
+        gridstation.id === selectedGridstation.id ? "blue" : color;
       const feature = new Feature({
         geometry: new Point(
           fromLonLat([
@@ -95,7 +101,8 @@ const GridstationMap = () => {
           ])
         ),
         id: gridstation.id,
-        color: color
+        color: color,
+        strokeColor: strokeColor
       });
       vectorSource.addFeature(feature);
     });
