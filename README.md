@@ -5,14 +5,6 @@ docker run -p 5000:5000 -td syno303/50hertzgridplannermapapi
 docker run -p 80:80 -td syno303/50hertzgridplannermapfrontend
 ```
 
-<h1 id="50hertz-gridplanner">50Hertz Gridplanner v1</h1>
-
-> Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
-
-<h1 id="50hertz-gridplanner-gridstation">GridStation</h1>
-
-
-```
 
 `GET /api/GridStation`
 
