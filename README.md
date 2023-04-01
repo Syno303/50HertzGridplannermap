@@ -1,8 +1,22 @@
 # 50HertzGridplannermap
 ```
 To run the project as docker images install docker and run the following commands:
+
 docker run -p 5000:5000 -td syno303/50hertzgridplannermapapi
 docker run -p 80:80 -td syno303/50hertzgridplannermapfrontend
+
+When the containers are running navigate to http://localhost
+Following sample login's are provided:
+
+Username    Claims
+Oz          user
+Koen        user, gridplanner
+
+A user with the claim "user" can view all the available gridstations
+A user with the claim "gridplanner" can create a new gridstation and update the status of the gridstation
+
+For the sake of the demo, passwords will not be checked
+
 ```
 
 
