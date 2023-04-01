@@ -1,5 +1,15 @@
-# 50HertzGridplannermap
+# 50Hertz Gridplanner Map
 ```
+This project was created as a case study for 50Hertz for the function: FUllstack developer
+
+Features
+
+Show all nearby gridstations within the range provided
+Dispay information of the gridstation upon selection
+Create a new gridstation and show on the map (gridplanner only)
+Update the status of a gridstation (gridplanner only)
+
+
 To run the project as docker images install docker and run the following commands:
 
 docker run -p 5000:5000 -td syno303/50hertzgridplannermapapi
