@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridPlanner.Api", "GridPlanner.Api\GridPlanner.Api.csproj", "{63713883-AA0E-446E-BF8A-37D8722BBC66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridPlanner.Library", "GridPlanner.Library\GridPlanner.Library.csproj", "{3C02C5F5-9158-4953-9E03-EB9E0A01D2C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63713883-AA0E-446E-BF8A-37D8722BBC66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63713883-AA0E-446E-BF8A-37D8722BBC66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63713883-AA0E-446E-BF8A-37D8722BBC66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63713883-AA0E-446E-BF8A-37D8722BBC66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C02C5F5-9158-4953-9E03-EB9E0A01D2C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C02C5F5-9158-4953-9E03-EB9E0A01D2C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C02C5F5-9158-4953-9E03-EB9E0A01D2C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C02C5F5-9158-4953-9E03-EB9E0A01D2C0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,12 @@
+.gridstation_new_container {
+  width: 40%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.gridstation_new_formcontrol {
+  margin-bottom: 25px !important;
+  max-width: 250px;
+}
