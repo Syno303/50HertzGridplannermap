@@ -16,7 +16,7 @@ Returns a list of all available gridstations
 
 > 200 Response
 
-json
+```json
 [
   {
     "id": 0,
@@ -73,10 +73,13 @@ Status Code **200**
 This operation does not require authentication
 </aside>
 
-## post__api_GridStation
 
 
 `POST /api/GridStation`
+
+```
+Adds a gridstation to the database
+```
 
 > Body parameter
 
@@ -112,9 +115,6 @@ This operation does not require authentication
 
 > 200 Response
 
-```
-{"id":0,"stationName":"string","coordinate":{"longitude":0,"latitude":0},"contact":{"name":"string","street":"string","number":"string","postalCode":"string","city":"string","country":"string","phone":"string"},"status":true,"kilovoltage":"string"}
-```
 
 ```json
 {
@@ -155,6 +155,10 @@ This operation does not require authentication
 
 `GET /api/GridStation/{id}`
 
+```
+Gets a gridstation by it's id
+```
+
 <h3 id="get__api_gridstation_{id}-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|
@@ -165,9 +169,6 @@ This operation does not require authentication
 
 > 200 Response
 
-```
-{"id":0,"stationName":"string","coordinate":{"longitude":0,"latitude":0},"contact":{"name":"string","street":"string","number":"string","postalCode":"string","city":"string","country":"string","phone":"string"},"status":true,"kilovoltage":"string"}
-```
 
 ```json
 {
@@ -201,11 +202,14 @@ This operation does not require authentication
 This operation does not require authentication
 </aside>
 
-## put__api_GridStation_{id}
 
 ```
 
 `PUT /api/GridStation/{id}`
+
+```
+Updates a gridstation
+```
 
 > Body parameter
 
@@ -242,9 +246,6 @@ This operation does not require authentication
 
 > 200 Response
 
-```
-{"id":0,"stationName":"string","coordinate":{"longitude":0,"latitude":0},"contact":{"name":"string","street":"string","number":"string","postalCode":"string","city":"string","country":"string","phone":"string"},"status":true,"kilovoltage":"string"}
-```
 
 ```json
 {
@@ -278,13 +279,16 @@ This operation does not require authentication
 This operation does not require authentication
 </aside>
 
-## post__api_GridStation_proximity_{radiusInKm}
 
 
 
 ```
 
 `POST /api/GridStation/proximity/{radiusInKm}`
+
+```
+Gets all gridstations in the proximity of the given coordinate within the provided radius
+```
 
 > Body parameter
 
@@ -306,9 +310,6 @@ This operation does not require authentication
 
 > 200 Response
 
-```
-[{"id":0,"stationName":"string","coordinate":{"longitude":0,"latitude":0},"contact":{"name":"string","street":"string","number":"string","postalCode":"string","city":"string","country":"string","phone":"string"},"status":true,"kilovoltage":"string"}]
-```
 
 ```json
 [
@@ -369,13 +370,16 @@ This operation does not require authentication
 
 <h1 id="50hertz-gridplanner-login">Login</h1>
 
-## post__api_Login
 
 
 
 ```
 
 `POST /api/Login`
+
+```
+Log in on the API
+```
 
 > Body parameter
 
