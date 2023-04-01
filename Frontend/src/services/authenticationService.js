@@ -6,7 +6,6 @@ class AuthenticationService {
       username,
       password
     };
-    console.log(username, password);
     return instance.post(`login`, data).then(response => {
       return response.data;
     });

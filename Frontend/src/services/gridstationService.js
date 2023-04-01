@@ -3,7 +3,6 @@ import instance from "../api/webapi";
 class GridStationService {
   getGridStationById(id) {
     return instance.get(`gridstation/${id}`).then(response => {
-      console.log(response);
       return response.data;
     });
   }
@@ -13,11 +12,9 @@ class GridStationService {
   }
 
   getAllGridstationsInProximityOfCoordinate(coordinate, distance) {
-    console.log("here");
     return instance
       .post(`gridstation/proximity/${distance}`, coordinate)
       .then(response => {
-        console.log("apiresponse", response.data);
         return response.data;
       });
   }
@@ -29,7 +26,6 @@ class GridStationService {
   }
 
   updateGridstation(gridstation) {
-    console.log(gridstation);
     return instance
       .put(`gridstation/${gridstation.id}`, gridstation)
       .then(response => response.data);

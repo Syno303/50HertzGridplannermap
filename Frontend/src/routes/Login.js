@@ -10,7 +10,6 @@ export default function Login() {
     setError("");
     const user = await AuthenticationService.login(username, password);
     AuthenticationService.setUser(user);
-    console.log(AuthenticationService.getUser());
     if (user) {
       window.location = "/";
     } else {

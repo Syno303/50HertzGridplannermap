@@ -1,17 +1,12 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { updateCoordinate } from "../../redux/reducers/gridstationSlice";
 import CurrentLocation from "../currentLocation/CurrentLocation";
 import GridstationMap from "./GridstationMap";
 import RadiusSelector from "../radiusSelector/RadiusSelector";
 
 export default function MapComponent() {
-  const gridstations = useSelector(state => state.gridstation.gridstations);
-
   const dispatch = useDispatch();
-  const currentCoordinate = useSelector(
-    state => state.gridstation.currentCoordinate
-  );
 
   const getLocation = () => {
     if (!navigator.geolocation) {
@@ -48,10 +43,7 @@ export default function MapComponent() {
           <RadiusSelector />
         </div>
 
-        <GridstationMap
-          coordinate={currentCoordinate}
-          gridstations={gridstations}
-        />
+        <GridstationMap />
       </div>
     </React.Fragment>
   );

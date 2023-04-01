@@ -11,20 +11,25 @@ import Point from "ol/geom/Point";
 import { fromLonLat } from "ol/proj";
 import { Circle as CircleStyle, Fill, Stroke, Style } from "ol/style";
 import Overlay from "ol/Overlay";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getGridStationById } from "../../redux/reducers/gridstationSlice";
 import { history } from "../../App";
 import "./GridstationMap.css";
 
-const GridstationMap = props => {
+const GridstationMap = () => {
+  const gridstations = useSelector(state => state.gridstation.gridstations);
+
+  const currentCoordinate = useSelector(
+    state => state.gridstation.currentCoordinate
+  );
   const dispatch = useDispatch();
   const mapRef = useRef(null);
 
   useEffect(() => {
     const view = new View({
       center: fromLonLat([
-        props.coordinate.longitude,
-        props.coordinate.latitude
+        currentCoordinate.longitude,
+        currentCoordinate.latitude
       ]),
       zoom: 14
     });
@@ -52,6 +57,7 @@ const GridstationMap = props => {
       positioning: "bottom-center",
       offset: [0, -10]
     });
+
     const map = new Map({
       target: mapRef.current,
       layers: [
@@ -79,7 +85,7 @@ const GridstationMap = props => {
       }
     });
 
-    props.gridstations.forEach(gridstation => {
+    gridstations.forEach(gridstation => {
       const color = gridstation.status ? "green" : "red";
       const feature = new Feature({
         geometry: new Point(
@@ -94,12 +100,12 @@ const GridstationMap = props => {
       vectorSource.addFeature(feature);
     });
     const extent = vectorLayer.getSource().getExtent();
-    if (extent && props.gridstations.length > 1) {
+    if (extent && gridstations.length > 1) {
       map.getView().fit(extent, { padding: [50, 50, 50, 50] });
     }
 
     return () => map.setTarget(null);
-  }, [props.coordinate, props.gridstations, dispatch]);
+  });
 
   return (
     <div className="gridstation_map_container">

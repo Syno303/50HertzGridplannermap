@@ -33,7 +33,6 @@ export const updateCoordinate = createAsyncThunk(
   async (coordinate, { rejectWithValue, getState, dispatch }) => {
     try {
       const radius = getState().gridstation.radius;
-      console.log("radius", radius);
       dispatch(getAllGridstationsInRadius({ coordinate, radius }));
       return coordinate;
     } catch (err) {
@@ -46,12 +45,9 @@ export const updateRadius = createAsyncThunk(
   "gridstation/updateRadius",
   async (_, { rejectWithValue, getState, dispatch }) => {
     try {
-      console.log("here");
       const state = getState().gridstation;
-      console.log(state);
       const coordinate = state.currentCoordinate;
       const radius = state.radius;
-      console.log(coordinate, radius);
       dispatch(getAllGridstationsInRadius({ coordinate, radius }));
     } catch (err) {
       return rejectWithValue(null, err);
@@ -63,11 +59,16 @@ export const updateGridstation = createAsyncThunk(
   "gridstation/updateGridstation",
   async (gridstation, { rejectWithValue, getState, dispatch }) => {
     try {
-      console.log(gridstation);
       const updatedGridstation = await GridStationService.updateGridstation(
         gridstation
       );
-      console.log(updatedGridstation);
+      const state = getState().gridstation;
+      dispatch(
+        getAllGridstationsInRadius({
+          coordinate: state.currentCoordinate,
+          radius: state.radius
+        })
+      );
       return updatedGridstation;
     } catch (err) {
       return rejectWithValue(null, err);
@@ -130,7 +131,6 @@ const { actions, reducer } = createSlice({
       state.gridstation = payload;
     },
     [updateCoordinate.fulfilled]: (state, { meta, payload }) => {
-      console.log("ucf", payload);
       state.currentCoordinate = payload;
     },
     [getAllGridstationsInRadius.fulfilled]: (state, { meta, payload }) => {
@@ -138,7 +138,6 @@ const { actions, reducer } = createSlice({
     },
     [updateGridstation.fulfilled]: (state, { meta, payload }) => {
       if (payload) {
-        console.log("ff", payload);
         let gridstations = [...state.gridstations];
         const index = gridstations.findIndex(x => x.id === payload.id);
         if (index >= 0) {
