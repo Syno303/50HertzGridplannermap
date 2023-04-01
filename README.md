@@ -8,15 +8,15 @@ docker run -p 80:80 -td syno303/50hertzgridplannermapfrontend
 
 `GET /api/GridStation`
 
+```
+Returns a list of all available gridstations
+```
+
 > Example responses
 
 > 200 Response
 
-```
-[{"id":0,"stationName":"string","coordinate":{"longitude":0,"latitude":0},"contact":{"name":"string","street":"string","number":"string","postalCode":"string","city":"string","country":"string","phone":"string"},"status":true,"kilovoltage":"string"}]
-```
-
-```json
+json
 [
   {
     "id": 0,
