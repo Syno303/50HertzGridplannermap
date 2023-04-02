@@ -15,17 +15,17 @@ To run the project as docker images install docker and run the following command
 start with sudo when running on a linux OS
 
 docker network create --subnet=172.20.0.0/16 50hertz
-docker run --net 50hertz --ip 172.20.0.2 -p 5000:5000 -td syno303/50hertzgridplanner.apigateway
 docker run --net 50hertz --ip 172.20.0.3 -p 5001:5001 -td syno303/50hertzgridplanner.stationservice
 docker run --net 50hertz --ip 172.20.0.4 -p 5002:5002 -td syno303/50hertzgridplanner.authservice
+docker run --net 50hertz --ip 172.20.0.2 -p 5000:5000 -td syno303/50hertzgridplanner.apigateway
 docker run -p 80:80 -td syno303/50hertzgridplanner.frontend
 
 When the containers are running navigate to http://localhost
 Following sample login's are provided:
 
 Username    Claims
-Oz          user
-Koen        user, gridplanner
+User          user
+Gridplanner   user, gridplanner
 
 A user with the claim "user" can view all the available gridstations
 A user with the claim "gridplanner" can create a new gridstation and update the status of the gridstation
