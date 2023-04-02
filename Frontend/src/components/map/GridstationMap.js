@@ -92,7 +92,7 @@ const GridstationMap = () => {
     gridstations.forEach(gridstation => {
       const color = gridstation.status ? "green" : "red";
       const strokeColor =
-        gridstation.id === selectedGridstation && selectedGridstation.id
+        selectedGridstation && selectedGridstation.id === gridstation.id
           ? "blue"
           : color;
       const feature = new Feature({
