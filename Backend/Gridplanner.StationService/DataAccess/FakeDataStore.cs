@@ -1,6 +1,6 @@
 ﻿using GridPlanner.Library.Models.Entities;
 
-namespace GridPlanner.Library;
+namespace Gridplanner.StationService.DataAccess;
 
 public static class FakeDataStore
 {

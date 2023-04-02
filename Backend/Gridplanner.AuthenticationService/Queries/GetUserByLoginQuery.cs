@@ -2,7 +2,7 @@
 using GridPlanner.Library.Models.Import;
 using MediatR;
 
-namespace GridPlanner.Library.Queries.Read;
+namespace Gridplanner.AuthenticationService.Queries;
 
 public record GetUserByLoginQuery(LoginDto login) : IRequest<UserDto?>
 {

@@ -2,7 +2,7 @@
 using GridPlanner.Library.Models.Import;
 using MediatR;
 
-namespace GridPlanner.Library.Commands;
+namespace Gridplanner.StationService.Mediatr.Commands;
 
 public record UpdateGridStationCommand(int id, GridStationImportDto gridstation):IRequest<GridStationExportDto>
 {

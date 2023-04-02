@@ -1,7 +1,7 @@
 ﻿using GridPlanner.Library.Models.Export;
 using GridPlanner.Library.Models.Import;
 
-namespace GridPlanner.Library.DataAccess;
+namespace Gridplanner.AuthenticationService.DataAccess;
 
 public interface ILoginDataAccess
 {

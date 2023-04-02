@@ -1,6 +1,6 @@
 ﻿using GridPlanner.Library.Models.Entities;
 
-namespace GridPlanner.Library.DataAccess;
+namespace Gridplanner.StationService.DataAccess;
 
 public interface IDataAccess
 {

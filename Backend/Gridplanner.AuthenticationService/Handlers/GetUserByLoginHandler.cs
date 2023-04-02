@@ -1,9 +1,9 @@
-﻿using GridPlanner.Library.DataAccess;
+﻿using Gridplanner.AuthenticationService.DataAccess;
+using Gridplanner.AuthenticationService.Queries;
 using GridPlanner.Library.Models.Export;
-using GridPlanner.Library.Queries.Read;
 using MediatR;
 
-namespace GridPlanner.Library.Handlers;
+namespace Gridplanner.AuthenticationService.Handlers;
 
 public class GetUserByLoginHandler:IRequestHandler<GetUserByLoginQuery, UserDto?>
 {

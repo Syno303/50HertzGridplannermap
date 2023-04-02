@@ -1,12 +1,11 @@
 using AutoMapper;
-using GridPlanner.Library.DataAccess;
 using GridPlanner.Library.Extensions;
-using GridPlanner.Library.Models.Entities;
 using GridPlanner.Library.Models.Export;
-using GridPlanner.Library.Queries.Read;
+using Gridplanner.StationService.DataAccess;
+using Gridplanner.StationService.Mediatr.Queries;
 using MediatR;
 
-namespace GridPlanner.Library.Handlers;
+namespace Gridplanner.StationService.Mediatr.Handlers;
 
 public class GetGridstationsInProximityOfCoordinateHandler : IRequestHandler<GetGridstationsInProximityOfCoordinateQuery, List<GridStationExportDto>>
 {

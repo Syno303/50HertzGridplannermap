@@ -1,5 +1,4 @@
 using GridPlanner.Library;
-using GridPlanner.Library.DataAccess;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,8 +14,8 @@ builder.Services.AddSwaggerGen(c=>c.SwaggerDoc("v1", new OpenApiInfo()
     Version = "v1"
 }));
 
-builder.Services.AddScoped<IDataAccess, DataAccess>();
-builder.Services.AddScoped<ILoginDataAccess, LoginDataAccess>();
+// builder.Services.AddScoped<IDataAccess, DataAccess>();
+// builder.Services.AddScoped<ILoginDataAccess, LoginDataAccess>();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(LibraryEntrypoint).Assembly));
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

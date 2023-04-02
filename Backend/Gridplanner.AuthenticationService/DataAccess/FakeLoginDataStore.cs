@@ -1,6 +1,6 @@
 ﻿using GridPlanner.Library.Models.Export;
 
-namespace GridPlanner.Library;
+namespace Gridplanner.AuthenticationService.DataAccess;
 
 public static class FakeLoginDataStore
 {
