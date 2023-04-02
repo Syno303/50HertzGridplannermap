@@ -8,7 +8,7 @@ public static class FakeLoginDataStore
     {
         new()
         {
-            UserName = "Koen",
+            UserName = "Gridplanner",
             Claims = new List<string>()
             {
                 "user",
@@ -16,7 +16,7 @@ public static class FakeLoginDataStore
             },
         }, new()
         {
-            UserName = "Oz",
+            UserName = "User",
             Claims = new List<string>()
             {
                 "user"
