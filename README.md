@@ -12,8 +12,13 @@ Update the status of a gridstation (gridplanner only)
 
 To run the project as docker images install docker and run the following commands:
 
-docker run -p 5000:5000 -td syno303/50hertzgridplannermapapi
-docker run -p 80:80 -td syno303/50hertzgridplannermapfrontend
+start with sudo when running on a linux OS
+
+docker network create --subnet=172.20.0.0/16 50hertz
+docker run --net 50hertz --ip 172.20.0.2 -p 5000:5000 -td syno303/50hertzgridplanner.apigateway
+docker run --net 50hertz --ip 172.20.0.3 -p 5001:5001 -td syno303/50hertzgridplanner.stationservice
+docker run --net 50hertz --ip 172.20.0.4 -p 5002:5002 -td syno303/50hertzgridplanner.authservice
+docker run -p 80:80 -td syno303/50hertzgridplanner.frontend
 
 When the containers are running navigate to http://localhost
 Following sample login's are provided:
